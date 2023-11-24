@@ -1,0 +1,94 @@
+div {
+  font-size: 12px;
+}
+
+:deep {
+  .el-select, el-input {
+    padding-left: 3px;
+  }
+
+  .el-select {
+    width: 120px;
+  }
+
+  .el-input {
+
+  }
+
+  .el-select-dropdown__item {
+    height: 20px;
+    line-height: 20px
+  }
+
+
+  .rule-title {
+    position: relative;
+    width: 40px;
+    text-align: center;
+    height: inherit;
+  }
+
+  .rule-title .rule-title-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    /* 这里有兼容性问题 */
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+  .rule-back {
+    background-color: white;
+    border-width: thin;
+    border-style: solid;
+    border-color: #bdbdbd;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    align-content: center;
+  }
+
+
+  .btns {
+    padding-top: 3px;
+  }
+
+  .panel-item {
+    font-size: 12px;
+    background-color: #efefef;
+    margin-top: 1px;
+    padding: 3px;
+    cursor: pointer;
+  }
+
+  .el-main {
+    margin: 1px;
+    padding: 1px;
+  }
+
+  .noTips {
+    color: gray;
+  }
+
+  .container {
+    display: flex;
+    margin-left: 3px;
+    margin-bottom: 2px;
+  }
+
+  .container-parent {
+    display: flex;
+  }
+
+  .rule-view{
+    justify-content: center;
+    justify-items: center;
+  }
+
+}
+
+
