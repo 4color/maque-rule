@@ -8,7 +8,8 @@ const app = new Vue({
 });
 
 
-import RuleDesigner from "maque-rule-designer/"
+import RuleDesigner from "maque-rule-designer/dist/maque-rule-designer"
+
 app.use(RuleDesigner)
 
 app.$mount('#app')
