@@ -20,15 +20,14 @@
 <script setup lang="ts">
 
 import DragContainerCondition from "../drag-container/drag-container-condition.vue";
-import {defineProps, onMounted} from "vue";
-import {IRule} from "../model/IRule";
-import {toRefs, ref} from "vue";
+import {defineProps} from "vue";
+import {IRule, RuleEnum} from "../model/IRule";
 
 
 const props = defineProps({
   data: {
     type: Object,
-    default: {children: []} as IRule
+    default: {children: [], id: "", type: RuleEnum.var, value: ""} as IRule
   }
 })
 

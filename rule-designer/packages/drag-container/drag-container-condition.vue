@@ -1,8 +1,8 @@
 <template>
   <div style="display: flex" class="condition-div">
     <drag-flag></drag-flag>
-    <div class="noTips" v-if="data.length===0">请拖动控制项到我后面:</div>
-    <draggable :list="data" :group="dragGroup"
+    <div class="noTips" v-if="props.data.length===0">请拖动控制项到我后面:</div>
+    <draggable :list="props.data" :group="dragGroup"
                class="container-parent"
                item-key="id"
                @add="AddAfter"
@@ -18,9 +18,8 @@
 
 <script setup lang="ts">
 
-import {onMounted, ref, defineProps, defineEmits, watch, toRefs} from "vue";
+import {defineProps} from "vue";
 import {ConditionComps} from "../model/AllowComponents.ts";
-import {type IRule} from "../model/IRule";
 
 const props = defineProps({
   data: {
@@ -29,7 +28,6 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(["change"]);
 const AddAfter = () => {
   //emit("change", props.data)
 }
@@ -37,7 +35,7 @@ const AddAfter = () => {
 const dragGroup = {
   name: "rule",
   pull: true,
-  put: (to: any, form: any) => {
+  put: (_: any, form: any) => {
     const fromType = form.el.__draggable_component__.context.element.type;
     if (ConditionComps.includes(fromType)) {
       return true;

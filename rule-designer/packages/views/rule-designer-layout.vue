@@ -26,9 +26,8 @@
 <script setup lang="ts">
 import PanelIndex from "../panel/panel-index.vue";
 import {IRule} from "../model/IRule.ts";
-import {ref, watch} from "vue";
+import {ref} from "vue";
 import {RootComps} from "../model/AllowComponents.ts";
-import RawDisplayer from "../other/raw-displayer.vue";
 
 const rules = ref([] as IRule[])
 
@@ -36,7 +35,7 @@ const rules = ref([] as IRule[])
 const dragGroup = {
   name: "rule",
   pull: true,
-  put: (to: any, form: any) => {
+  put: (_: any, form: any) => {
     const fromType = form.el.__draggable_component__.context.element.type;
     if (RootComps.includes(fromType)) {
       return true;
@@ -63,7 +62,7 @@ defineExpose({
   getData
 })
 
-const change = (d: any) => {
+const change = (_: any) => {
   //console.log(d)
 }
 

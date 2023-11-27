@@ -25,10 +25,10 @@
     <!-- 组件-->
     <div>
       <div class="rule-back">
-        <rule-judge-if :data="data.childrenIf"></rule-judge-if>
+        <rule-judge-if :data="props.data.childrenIf"></rule-judge-if>
       </div>
       <div class="rule-back">
-        <rule-judge-else :data="data.childrenElse"></rule-judge-else>
+        <rule-judge-else :data="props.data.childrenElse"></rule-judge-else>
       </div>
 
     </div>
@@ -39,15 +39,13 @@
 
 import RuleJudgeIf from "./judge/rule-judge-if.vue";
 import RuleJudgeElse from "./judge/rule-judge-else.vue";
-import {defineProps, onMounted, ref, toRefs, watch, defineEmits} from "vue";
-import {IRule} from "../model/IRule";
-import isEqual from "lodash/isEqual"
-
+import {defineProps} from "vue";
+import {IRule, RuleEnum} from "../model/IRule";
 
 const props = defineProps({
   data: {
     type: Object,
-    default: {childrenIf: [], childrenElse: []} as IRule
+    default: {childrenIf: [], childrenElse: [], id: "", type: RuleEnum.judge, value: "", children: []} as IRule
   }
 })
 

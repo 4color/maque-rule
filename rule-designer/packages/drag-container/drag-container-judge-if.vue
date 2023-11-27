@@ -1,6 +1,6 @@
 <template>
-  <div class="noTips" v-if="data.length==0">请拖动内容到此</div>
-  <draggable :list="data" :group="dragGroup"
+  <div class="noTips" v-if="props.data.length==0">请拖动内容到此</div>
+  <draggable :list="props.data" :group="dragGroup"
              item-key="id">
     <template #item="{ element }">
       <div class="container">
@@ -11,9 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps, defineEmits, watch} from "vue";
+import {defineProps} from "vue";
 import {JudgeIfComps} from "../model/AllowComponents.ts";
-import {IRule} from "../model/IRule.ts";
 
 const props = defineProps({
   data: {
@@ -25,7 +24,7 @@ const props = defineProps({
 const dragGroup = {
   name: "rule",
   pull: true,
-  put: (to: any, form: any) => {
+  put: (_: any, form: any) => {
     const fromType = form.el.__draggable_component__.context.element.type;
     if (JudgeIfComps.includes(fromType)) {
       return true;

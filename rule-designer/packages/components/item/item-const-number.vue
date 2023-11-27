@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 
-import {defineEmits, defineProps, onMounted, ref, toRefs, watch} from "vue";
+import {defineProps, onMounted, ref, toRefs} from "vue";
 import {IRule} from "../../model/IRule";
 
 
@@ -14,11 +14,11 @@ const props = defineProps({
     default: {} as IRule
   }
 })
-const mv =toRefs(props).data
-const rule = ref({value:""} as IRule)
+const mv = toRefs(props).data
+const rule = ref({value: ""} as IRule)
 
-onMounted(()=>{
-  rule.value=mv.value;
+onMounted(() => {
+  rule.value = mv.value as IRule;
 })
 
 

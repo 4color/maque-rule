@@ -21,6 +21,7 @@ import ItemDecider from "./components/item/item-decider.vue";
 import ItemDs from "./components/item/item-ds.vue";
 import ItemVar from "./components/item/item-var.vue";
 
+// @ts-ignore
 import {pascal} from 'naming-style';
 import draggable from "vuedraggable";
 
@@ -43,18 +44,20 @@ const components = [
     ItemConstNumber
 ];
 
-import type { App } from 'vue';
+import type {App} from 'vue';
 
 const install = (app: App) => {
 
     components.forEach((component) => {
         // 实际代码中使用的组件名
-        if(component.__name) {
+        if (component.__name) {
             app.component(pascal(component.__name), component);
-        }else{
-            let filenames =component.__file.split("/")
-            let name=filenames[filenames.length-1].replace(".vue","");
-            app.component(pascal(name), component);
+        } else {
+            if (component.__file) {
+                let filenames = component.__file.split("/")
+                let name = filenames[filenames.length - 1].replace(".vue", "");
+                app.component(pascal(name), component);
+            }
         }
     })
 
@@ -62,4 +65,4 @@ const install = (app: App) => {
     app.component("DragFlag", DragFlag);
 }
 // 用于后面app.use调用
-export default { install }
+export default {install}

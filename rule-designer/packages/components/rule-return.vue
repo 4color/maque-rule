@@ -8,7 +8,7 @@
 
       </div>
       <div class="rule-edit">
-        <el-select placeholder="返回值"  v-model="rule.value">
+        <el-select placeholder="返回值" v-model="rule.value">
           <el-option :value="true">返回真(true）</el-option>
           <el-option :value="false">返回假(false）</el-option>
         </el-select>
@@ -20,19 +20,19 @@
 <script setup lang="ts">
 
 import {defineProps, onMounted, ref, toRefs} from "vue";
-import {IRule} from "../model/IRule";
+import {IRule, RuleEnum} from "../model/IRule";
 
 const props = defineProps({
   data: {
     type: Object,
-    default: {children:[]} as IRule
+    default: {children: [], type: RuleEnum.return, id: "", value: ""} as IRule
   }
 })
-const mv =toRefs(props).data
+const mv = toRefs(props).data
 const rule = ref({} as IRule)
 
-onMounted(()=>{
-  rule.value=mv.value;
+onMounted(() => {
+  rule.value = mv.value as IRule;
 })
 </script>
 

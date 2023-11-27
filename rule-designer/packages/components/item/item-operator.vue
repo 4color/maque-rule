@@ -27,11 +27,11 @@ const mv =toRefs(props).data
 const rule = ref({value:""} as IRule)
 
 onMounted(()=>{
-  rule.value=mv.value;
+  rule.value=mv.value as IRule;
 })
 
 const emit = defineEmits(["update:modelValue"]);
-watch(rule,(newVal,oldVal)=>{
+watch(rule,(newVal)=>{
   emit("update:modelValue",newVal)
 },{deep:true})
 </script>

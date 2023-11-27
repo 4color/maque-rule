@@ -4,7 +4,7 @@ export interface IControl {
     type: string,
     name: string,
     component: string,
-    group: boolean,//是否是分组
+    group?: boolean,//是否是分组
 }
 
 export const Controls = [

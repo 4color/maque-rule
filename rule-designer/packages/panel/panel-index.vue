@@ -116,7 +116,10 @@ const AddControl = (ctrl: IControl) => {
     component: ctrl.component,
     children: [],
     childrenIf: [],
-    childrenElse: []
+    childrenElse: [],
+    value: "",
+    dsName: "",
+    dsField: ""
   } as IRule
   return rule;
 }
@@ -133,11 +136,11 @@ const AddControlItem = (ctrl: IControl) => {
   return ruleItem;
 }
 
-function OnMoveControlItem(evt) {
+function OnMoveControlItem() {
   return true;
 }
 
-function OnMoveControl(evt) {
+function OnMoveControl() {
   return true;
 }
 
@@ -148,7 +151,7 @@ const RecycleEnd = () => {
 }
 
 //显示的Div
-const dispalyIndex = ref([])
+const dispalyIndex = ref([] as boolean[])
 const ShowIndex = (index: number) => {
   if (dispalyIndex.value[index]) {
     return true;

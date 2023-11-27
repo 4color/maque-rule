@@ -5,11 +5,11 @@ export interface IRule {
     id: string,
     type: RuleEnum
     value: any,
-    children: IRule[],
-    childrenIf: IRule[],
-    childrenElse: IRule[],
-    dsName: string,
-    dsField: string,
+    children?: IRule[],
+    childrenIf?: IRule[],
+    childrenElse?: IRule[],
+    dsName?: string,
+    dsField?: string,
 
 }
 

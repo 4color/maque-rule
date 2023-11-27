@@ -16,17 +16,17 @@ const props = defineProps({
     default: {} as IRule
   }
 })
-const mv =toRefs(props).data
-const rule = ref({value:""} as IRule)
+const mv = toRefs(props).data
+const rule = ref({value: "", id: ""} as IRule)
 
-onMounted(()=>{
-  rule.value=mv.value;
+onMounted(() => {
+  rule.value = mv.value as IRule;
 })
 
 const emit = defineEmits(["update:modelValue"]);
-watch(rule,(newVal,oldVal)=>{
-  emit("update:modelValue",newVal)
-},{deep:true})
+watch(rule, (newVal) => {
+  emit("update:modelValue", newVal)
+}, {deep: true})
 
 </script>
 

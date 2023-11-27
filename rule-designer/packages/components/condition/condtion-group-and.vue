@@ -21,14 +21,14 @@
       </div>
     </div>
     <div>
-      <drag-container-condition-group :data="data.children"></drag-container-condition-group>
+      <drag-container-condition-group :data="props.data.children"></drag-container-condition-group>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import DragContainerConditionGroup from "../../drag-container/drag-container-condition-group.vue";
-import {defineEmits, defineProps, onMounted, ref, toRefs, watch} from "vue";
+import {defineProps} from "vue";
 import {IRule} from "../../model/IRule";
 
 const props = defineProps({
