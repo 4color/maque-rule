@@ -21,7 +21,7 @@ export default defineConfig({
         rollupOptions: { // 自定义底层的Rollup打包配置
             // https://rollupjs.org/configuration-options/
             // 确保外部化处理那些你不想打包进库的依赖
-            external: ['vue', 'element-plus'],
+            //external: ['vue', 'element-plus'],
             output: {
                 // format: 'es', // 默认es，可选 'amd' 'cjs' 'es' 'iife' 'umd' 'system'
                 exports: 'named', // https://rollupjs.org/configuration-options/#output-exports
