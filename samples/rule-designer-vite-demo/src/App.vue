@@ -1,5 +1,5 @@
 <script setup>
-import RuleDesigner from "maque-rule-designer/dist/maque-rule-designer"
+import RuleDesigner from "maque-rule-designer"
 </script>
 
 <template>

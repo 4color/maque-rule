@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.3.4",
-    "maque-rule-designer": "^0.0.3",
+    "maque-rule-designer": "^0.0.5",
     "element-plus": "^2.4.2"
   },
   "devDependencies": {
