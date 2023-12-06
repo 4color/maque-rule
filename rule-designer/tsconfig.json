@@ -22,9 +22,13 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue",
-    "packages/**/*.ts",
-    "packages/**/*.vue"
+  "include": [
+    "example/**/*.ts",
+    "example/**/*.d.ts",
+    "example/**/*.tsx",
+    "example/**/*.vue",
+    "package/**/*.ts",
+    "package/**/*.vue"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

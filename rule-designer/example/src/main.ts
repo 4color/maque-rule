@@ -8,7 +8,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
 
-import RuleDesigner from "../package/views/rule-designer-layout.vue"
+import RuleDesigner from 'maque-rule-designer/lib/rule-designer.js'
 
 const app = createApp(App)
 
