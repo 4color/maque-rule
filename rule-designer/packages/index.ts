@@ -28,6 +28,11 @@ import draggable from "vuedraggable";
 
 import DragFlag from "./other/drag-flag.vue";
 
+// 引入自定义插件对象：注册整个项目全局组件
+import SvgIcon from "./svg/svg-icon.vue"
+// @ts-ignore
+import RuleDesignerLayout from "./views/rule-designer-layout.vue";
+
 const components = [
     RuleReturn,
     RuleVar,
@@ -41,7 +46,9 @@ const components = [
     ItemDs,
     ItemVar,
     ItemConstChar,
-    ItemConstNumber
+    ItemConstNumber,
+    RuleDesignerLayout,
+    SvgIcon
 ];
 
 import type {App} from 'vue';

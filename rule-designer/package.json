@@ -1,8 +1,11 @@
 {
   "name": "maque-rule-designer",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
+  "main": "lib/index.umd.cjs",
+  "module": "lib/index.umd.cjs",
+  "types": "lib/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -12,6 +15,7 @@
     "element-plus": "^2.4.2",
     "naming-style": "^1.0.1",
     "nanoid": "^5.0.3",
+    "terser": "^5.24.0",
     "vue": "^3.3.4",
     "vuedraggable": "^4.1.0"
   },

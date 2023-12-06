@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import RuleDesignerLayout from "../packages/views/rule-designer-layout.vue";
 import {ref} from "vue";
 import simple from "./json/simple.json"
 
