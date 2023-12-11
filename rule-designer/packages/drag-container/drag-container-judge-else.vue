@@ -12,7 +12,6 @@
 
 <script setup lang="ts">
 import {defineProps} from "vue";
-import draggable from "vuedraggable";
 import {JudgeElseComps} from "../model/AllowComponents.ts";
 
 const props = defineProps({

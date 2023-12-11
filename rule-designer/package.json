@@ -1,14 +1,21 @@
 {
   "name": "maque-rule-designer",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.12",
   "type": "module",
-  "main": "lib/index.umd.cjs",
-  "module": "lib/index.umd.cjs",
-  "types": "lib/index.d.ts",
+  "main": "./dist/rule-designer.umd.cjs",
+  "module": "./packages/index.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./packages/index.ts",
+      "require": "./dist/rule-designer.umd.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc&& vite build",
     "preview": "vite preview"
   },
   "dependencies": {

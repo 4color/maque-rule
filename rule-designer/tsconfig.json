@@ -23,12 +23,8 @@
     "allowJs": true
   },
   "include": [
-    "example/**/*.ts",
-    "example/**/*.d.ts",
-    "example/**/*.tsx",
-    "example/**/*.vue",
-    "package/**/*.ts",
-    "package/**/*.vue"
+    "packages/**/*.ts",
+    "packages/**/*.vue"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
