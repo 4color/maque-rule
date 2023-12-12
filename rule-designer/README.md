@@ -2,7 +2,7 @@
 
 Generate rule metadata through drag and drop
 
-[[中文](README_cn.md)]
+[[中文](README_CN.md)]
 
 ## Install
 
