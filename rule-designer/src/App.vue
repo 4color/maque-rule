@@ -27,7 +27,7 @@ const ExportJson = () => {
 
 <template>
   <div>
-    设计器布局演示:
+    设计器布局开发:
     <el-link @click="newDesigner">【空白设计器】</el-link>
     <el-link @click="SimpleDesigner"> 【简单设计器】</el-link>
     <el-link @click="ComplexDesigner">【复杂设计器】</el-link>
