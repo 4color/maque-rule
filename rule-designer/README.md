@@ -4,7 +4,7 @@ Generate rule metadata through drag and drop
 
 [[中文](README_CN.md)]
 
-![rule](rule.png)
+![rule](https://raw.githubusercontent.com/4color/maque-rule/main/docs/dist/rule.png)
 
 ## Install
 
