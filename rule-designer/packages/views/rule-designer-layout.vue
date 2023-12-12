@@ -28,6 +28,9 @@ import PanelIndex from "../panel/panel-index.vue";
 import {IRule} from "../model/IRule.ts";
 import {ref} from "vue";
 import {RootComps} from "../model/AllowComponents.ts";
+import {IDataSet} from "../model/IDataSet.ts";
+import {IDataSetName, IFuncName} from "../model/IConst.ts";
+import {IFunc} from "../model/IFunc.ts";
 
 const rules = ref([] as IRule[])
 
@@ -57,9 +60,31 @@ const getData = () => {
   return rules;
 }
 
+/**
+ * Set DataSet dropselect data
+ * @param data
+ * @constructor
+ */
+const SetDsData = (data: IDataSet[]) => {
+  let trueData = JSON.parse(JSON.stringify(data));
+  eval("window." + IDataSetName + "=trueData;");
+}
+
+/**
+ * Set Custom Functions
+ * @param data
+ * @constructor
+ */
+const SetFunc = (data: IFunc[]) => {
+  let trueData = JSON.parse(JSON.stringify(data));
+  eval("window." + IFuncName + "=trueData;");
+}
+
 defineExpose({
   loadData,
-  getData
+  getData,
+  SetDsData,
+  SetFunc
 })
 
 const change = (_: any) => {

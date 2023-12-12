@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import {createSvgIconsPlugin} from "vite-plugin-svg-icons";
 import {resolve} from "path";
 import dts from 'vite-plugin-dts'
-
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [vue(),
@@ -27,7 +26,7 @@ export default defineConfig({
             entry: resolve(__dirname, 'packages/index.ts'),  // entry是必需的，因为库不能使用HTML作为入口。
             name: 'RuleDesigner', // 暴露的全局变量
             fileName: 'rule-designer', // 输出的包文件名，默认是package.json的name选项
-            formats:["es","umd"]
+            formats: ["es", "umd"]
         },
         rollupOptions: { // 自定义底层的Rollup打包配置
             // https://rollupjs.org/configuration-options/

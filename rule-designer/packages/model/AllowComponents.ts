@@ -51,3 +51,14 @@ export const GroupsComps = [
     RuleEnum.conditionGroupOr,
 ];
 
+
+/**
+ * 函数允许的组件
+ */
+export const FuncComps = [
+    ControlItemEnum.constVarchar,
+    ControlItemEnum.constNumber,
+    ControlItemEnum.dataset,
+    ControlItemEnum.getvar
+];
+

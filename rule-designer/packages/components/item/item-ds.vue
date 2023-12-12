@@ -1,15 +1,15 @@
 <template>
   <div class="rule-view" v-if="isView">
-    {{rule.dsName}}
-    <span v-if="rule.dsField">.{{rule.dsField}}</span>
+    {{ rule.dsName }}
+    <span v-if="rule.dsField">.{{ rule.dsField }}</span>
   </div>
-  <div class="rule-edit"  v-if="!isView">
+  <div class="rule-edit" v-if="!isView">
     <el-select placeholder="数据集" v-model="rule.dsName">
-      <el-option value="gdxm">供地项目(gdxm)</el-option>
+      <el-option :value="item.dsName" v-for="item in alls">{{ item.dsName }}({{ item.dsDesc }})</el-option>
     </el-select>
 
-    <el-select placeholder="字段"  v-model="rule.dsField">
-      <el-option value="xmMc">项目名称(xmMc)</el-option>
+    <el-select placeholder="字段" v-model="rule.dsField">
+      <el-option :value="item.fieldName" v-for="item in allFields">{{item.fieldName}}({{ item.filedDesc}})</el-option>
     </el-select>
   </div>
 </template>
@@ -19,6 +19,8 @@
 
 import {defineEmits, defineProps, onMounted, ref, toRefs, watch} from "vue";
 import {IRule} from "../../model/IRule";
+import {IDataSet, IDataSetField} from "../../model/IDataSet.ts";
+import {IDataSetName} from "../../model/IConst.ts";
 
 const props = defineProps({
   data: {
@@ -26,22 +28,35 @@ const props = defineProps({
     default: {} as IRule
   }
 })
-const mv =toRefs(props).data
-const rule = ref({value:""} as IRule)
+const mv = toRefs(props).data
+const rule = ref({value: ""} as IRule)
+const alls = ref([] as IDataSet[])
+const allFields = ref([] as IDataSetField[])
 
-onMounted(()=>{
-  rule.value=mv.value as IRule;
+onMounted(() => {
+  alls.value = eval("window." + IDataSetName);
+  rule.value = mv.value as IRule;
 })
 
 const emit = defineEmits(["update:modelValue"]);
-watch(rule,(newVal,_)=>{
-  emit("update:modelValue",newVal)
-},{deep:true})
+watch(rule, (newVal, _) => {
+  emit("update:modelValue", newVal)
+
+  allFields.value = []
+  let reuslt = alls.value.find(function (item) {
+    return item.dsName == newVal.dsName;
+  })
+
+  if (reuslt) {
+    allFields.value = reuslt.fields;
+  }
+}, {deep: true})
+
 
 /**
  * 是否是查看
  */
-const isView=ref(false)
+const isView = ref(false)
 
 </script>
 
