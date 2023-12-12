@@ -4,6 +4,8 @@ Generate rule metadata through drag and drop
 
 [[中文](README_CN.md)]
 
+![rule](rule.png)
+
 ## Install
 
 `npm i maque-rule-designer`
