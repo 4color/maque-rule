@@ -49,8 +49,10 @@ export enum ControlItemEnum {
     constVarchar = "constVarchar", //字符串
     constNumber = "constNumber", //数字
     dataset = "dataset", //数据集,
+    dsField = "dsField", //数据集字段,
     func = "func",//函数
     decider = "decider",//判断符
     getvar = "getvar",//变量名
     operator = "operator",//运算符
+    empty = "empty",//空值
 }

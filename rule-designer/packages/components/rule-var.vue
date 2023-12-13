@@ -20,9 +20,9 @@
 <script setup lang="ts">
 
 import DragContainerCondition from "../drag-container/drag-container-condition.vue";
-import {defineProps} from "vue";
+import {computed, defineEmits, defineProps, toRefs, watch} from "vue";
 import {IRule, RuleEnum} from "../model/IRule";
-
+import {varStore} from "../store/StoreVar.ts";
 
 const props = defineProps({
   data: {
@@ -30,6 +30,17 @@ const props = defineProps({
     default: {children: [], id: "", type: RuleEnum.var, value: ""} as IRule
   }
 })
+
+const userVarStore = varStore();
+const mv = computed(() => {
+  return JSON.parse(JSON.stringify(props.data?.value));
+})
+
+watch(mv, (newVal, oldValue) => {
+  userVarStore.Remove(oldValue as string);
+  userVarStore.InsertVar(newVal);
+}, {deep: true, immediate: true})
+
 
 </script>
 

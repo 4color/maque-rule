@@ -35,11 +35,12 @@ export const JudgeElseComps = [
 export const ConditionComps = [
     ControlItemEnum.constVarchar,
     ControlItemEnum.constNumber,
-    ControlItemEnum.dataset,
+    ControlItemEnum.dsField,
     ControlItemEnum.func,
     ControlItemEnum.operator,
     ControlItemEnum.decider,
-    ControlItemEnum.getvar
+    ControlItemEnum.getvar,
+    ControlItemEnum.empty
 ];
 
 /**
@@ -59,6 +60,7 @@ export const FuncComps = [
     ControlItemEnum.constVarchar,
     ControlItemEnum.constNumber,
     ControlItemEnum.dataset,
+    ControlItemEnum.dsField,
     ControlItemEnum.getvar
 ];
 

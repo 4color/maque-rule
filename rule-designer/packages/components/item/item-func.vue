@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <div class="func">
     <el-select placeholder="函数" v-model="rule.value">
       <el-option :value="item.funcName" v-for="item in alls">{{ item.funcDesc }}</el-option>
     </el-select>
@@ -7,7 +7,7 @@
     <span class="funcChar">(</span>
     <drag-container-func :data="props.data?.children"></drag-container-func>
     <span class="funcChar">)</span>
-  </span>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -51,5 +51,8 @@ watch(rule, (newVal) => {
 
 .funcChar {
   color: red;
+  padding-right: 3px;
+  padding-left: 3px;
 }
+
 </style>

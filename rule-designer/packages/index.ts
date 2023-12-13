@@ -1,15 +1,9 @@
-// @ts-ignore
 import RuleReturn from "./components/rule-return.vue";
-// @ts-ignore
 import RuleVar from "./components/rule-var.vue";
-// @ts-ignore
 import RuleJudge from "./components/rule-judge.vue";
 
-// @ts-ignore
 import CondtionItem from "./components/condition/condtion-item.vue";
-// @ts-ignore
 import CondtionGroupAnd from "./components/condition/condtion-group-and.vue";
-// @ts-ignore
 import CondtionGroupOr from "./components/condition/condtion-group-or.vue";
 
 import ItemConstChar from "./components/item/item-const-char.vue";
@@ -19,7 +13,9 @@ import ItemFunc from "./components/item/item-func.vue";
 import ItemOperator from "./components/item/item-operator.vue";
 import ItemDecider from "./components/item/item-decider.vue";
 import ItemDs from "./components/item/item-ds.vue";
+import ItemDsField from "./components/item/item-ds-field.vue";
 import ItemVar from "./components/item/item-var.vue";
+import ItemNull from "./components/item/item-null.vue";
 
 // @ts-ignore
 import {pascal} from 'naming-style';
@@ -48,7 +44,9 @@ const components = [
     ItemConstChar,
     ItemConstNumber,
     RuleDesignerLayout,
-    SvgIcon
+    SvgIcon,
+    ItemNull,
+    ItemDsField
 ];
 
 import type {App} from 'vue';
@@ -70,6 +68,7 @@ const install = (app: App) => {
 
     app.component("draggable", draggable);
     app.component("DragFlag", DragFlag);
+
 }
 // 用于后面app.use调用
 export default {install}

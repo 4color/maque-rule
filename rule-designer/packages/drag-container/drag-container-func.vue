@@ -1,11 +1,14 @@
 <template>
-  <div class="noTips" v-if="props.data.length==0">请拖动内容到此</div>
+  <span class="noTips" v-if="props.data.length==0">请拖动参数组件到此:</span>
   <draggable :list="props.data" :group="dragGroup"
+             tag="div"
+             class="drag-empty"
              item-key="id">
-    <template #item="{ element }">
-      <div class="container">
+    <template #item="{ element,index }">
+      <span class="container">
         <component :is="element.component" :data="element"></component>
-      </div>
+        <span v-if="index<props.data.length-1" style="padding-left: 4px; padding-right: 4px; display: inline-block"> , </span>
+      </span>
     </template>
   </draggable>
 </template>

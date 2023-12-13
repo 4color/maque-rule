@@ -1,14 +1,14 @@
 <template>
   <el-select placeholder="变量" v-model="rule.value">
-    <el-option value="a">a</el-option>
-    <el-option value="b">b</el-option>
+    <el-option :value="item" v-for="item in allVars">{{ item }}</el-option>
   </el-select>
 </template>
 
 <script setup lang="ts">
 
-import {defineEmits, defineProps, onMounted, ref, toRefs, watch} from "vue";
+import {computed, defineEmits, defineProps, onMounted, ref, toRefs, watch} from "vue";
 import {IRule} from "../../model/IRule";
+import {varStore} from "../../store/StoreVar.ts";
 
 const props = defineProps({
   data: {
@@ -16,8 +16,13 @@ const props = defineProps({
     default: {} as IRule
   }
 })
+
+const userVarStore = varStore();
 const mv = toRefs(props).data
 const rule = ref({value: "", id: ""} as IRule)
+const allVars = computed(() => {
+  return userVarStore.vars;
+})
 
 onMounted(() => {
   rule.value = mv.value as IRule;

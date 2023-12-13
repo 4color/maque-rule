@@ -9,9 +9,11 @@ import 'element-plus/dist/index.css'
 
 
 import RuleDesigner from "../packages/index"
+import {createPinia} from "pinia";
 
 const app = createApp(App)
 
+app.use(createPinia())
 app.use(ElementPlus)
 app.use(RuleDesigner)
 

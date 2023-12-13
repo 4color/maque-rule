@@ -25,11 +25,11 @@ import {IRule, RuleEnum} from "../model/IRule";
 const props = defineProps({
   data: {
     type: Object,
-    default: {children: [], type: RuleEnum.return, id: "", value: ""} as IRule
+    default: {children: [], type: RuleEnum.return, id: "", value: true} as IRule
   }
 })
 const mv = toRefs(props).data
-const rule = ref({} as IRule)
+const rule = ref({value: true} as IRule)
 
 onMounted(() => {
   rule.value = mv.value as IRule;

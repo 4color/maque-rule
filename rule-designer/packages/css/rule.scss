@@ -84,9 +84,28 @@ div {
     display: flex;
   }
 
-  .rule-view{
+  .rule-view {
     justify-content: center;
     justify-items: center;
+  }
+
+
+  .drag-empty {
+    display: inline-block;
+    min-width: 20px !important;
+    min-height: 23px;
+  }
+
+  .rule-edit {
+    display: flex;
+  }
+
+  .func .container {
+    display: inline-block !important;
+  }
+
+  .func .rule-edit {
+    display: inline-block !important;
   }
 
 }

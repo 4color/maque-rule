@@ -1,11 +1,14 @@
 <template>
   <div class="rule-view" v-if="isView">
     {{ rule.dsName }}
-    <span v-if="rule.dsField">.{{ rule.dsField }}</span>
   </div>
   <div class="rule-edit" v-if="!isView">
     <el-select placeholder="数据集" v-model="rule.dsName">
       <el-option :value="item.dsName" v-for="item in alls">{{ item.dsName }}({{ item.dsDesc }})</el-option>
+    </el-select>
+
+    <el-select placeholder="字段" v-model="rule.dsField">
+      <el-option :value="item.fieldName" v-for="item in allFields">{{item.fieldName}}({{ item.filedDesc}})</el-option>
     </el-select>
   </div>
 </template>
@@ -27,6 +30,7 @@ const props = defineProps({
 const mv = toRefs(props).data
 const rule = ref({value: ""} as IRule)
 const alls = ref([] as IDataSet[])
+const allFields = ref([] as IDataSetField[])
 
 onMounted(() => {
   alls.value = eval("window." + IDataSetName);
@@ -36,6 +40,15 @@ onMounted(() => {
 const emit = defineEmits(["update:modelValue"]);
 watch(rule, (newVal, _) => {
   emit("update:modelValue", newVal)
+
+  allFields.value = []
+  let reuslt = alls.value.find(function (item) {
+    return item.dsName == newVal.dsName;
+  })
+
+  if (reuslt) {
+    allFields.value = reuslt.fields;
+  }
 }, {deep: true})
 
 

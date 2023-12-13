@@ -31,8 +31,10 @@ export const ControlItems = [
         ]
     },
     {type: ControlItemEnum.dataset, name: "数据集", component: "ItemDs"},
+    {type: ControlItemEnum.dsField, name: "数据集字段", component: "ItemDsField"},
     {type: ControlItemEnum.getvar, name: "变量名", component: "ItemVar"},
     {type: ControlItemEnum.func, name: "函数", component: "ItemFunc"},
     {type: ControlItemEnum.operator, name: "运算符", component: "ItemOperator"},
-    {type: ControlItemEnum.decider, name: "判断符", component: "ItemDecider"}
+    {type: ControlItemEnum.decider, name: "判断符", component: "ItemDecider"},
+    {type: ControlItemEnum.empty, name: "空值", component: "ItemNull"}
 ] as IControl[]
