@@ -13,7 +13,8 @@ export const JudgeIfComps = [
     RuleEnum.conditionGroupAnd,
     RuleEnum.conditionGroupOr,
     RuleEnum.var,
-    RuleEnum.judge
+    RuleEnum.judge,
+    RuleEnum.return
 ];
 
 

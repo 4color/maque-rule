@@ -1,0 +1,97 @@
+[
+  {
+    "id": "mIB93_4bjZ-b989wgG9Nb",
+    "type": "var",
+    "component": "RuleVar",
+    "children": [
+      {
+        "id": "niO0MCwPD2iKcO_lcjEDh",
+        "type": "constNumber",
+        "component": "ItemConstNumber",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": "78"
+      }
+    ],
+    "childrenIf": [],
+    "childrenElse": [],
+    "value": "b",
+    "dsName": "",
+    "dsField": ""
+  },
+  {
+    "id": "8tPfpgl7lPg3YRWTlDOCS",
+    "type": "judge",
+    "component": "RuleJudge",
+    "children": [],
+    "childrenIf": [
+      {
+        "id": "yzL5dhTi7ds7-gcK4bqYr",
+        "type": "condition",
+        "component": "CondtionItem",
+        "children": [
+          {
+            "id": "3ThHIuTLX0mi_RU98Rxz7",
+            "type": "getvar",
+            "component": "ItemVar",
+            "children": [],
+            "childrenIf": [],
+            "childrenElse": [],
+            "value": "b"
+          },
+          {
+            "id": "pxu5zzCSNFYREWHamJunC",
+            "type": "decider",
+            "component": "ItemDecider",
+            "children": [],
+            "childrenIf": [],
+            "childrenElse": [],
+            "value": ">"
+          },
+          {
+            "id": "S6CageVmTQmhPj4FSlb25",
+            "type": "constNumber",
+            "component": "ItemConstNumber",
+            "children": [],
+            "childrenIf": [],
+            "childrenElse": [],
+            "value": "100"
+          }
+        ],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": "",
+        "dsName": "",
+        "dsField": ""
+      },
+      {
+        "id": "d80nDFopOJ9lWf4lIEF9g",
+        "type": "return",
+        "component": "RuleReturn",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": true,
+        "dsName": "",
+        "dsField": ""
+      }
+    ],
+    "childrenElse": [
+      {
+        "id": "6MlbKUL1aRTs4IW7Okhvi",
+        "type": "return",
+        "component": "RuleReturn",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": false,
+        "dsName": "",
+        "dsField": ""
+      }
+    ],
+    "value": "",
+    "dsName": "",
+    "dsField": ""
+  }
+]

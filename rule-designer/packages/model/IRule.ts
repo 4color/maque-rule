@@ -3,7 +3,7 @@
  */
 export interface IRule {
     id: string,
-    type: RuleEnum
+    type: RuleEnum | ControlItemEnum,
     value: any,
     children?: IRule[],
     childrenIf?: IRule[],

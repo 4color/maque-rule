@@ -1,0 +1,140 @@
+[
+  {
+    "id": "54ZWmg6HYT7ttY0HGdOoJ",
+    "type": "var",
+    "component": "RuleVar",
+    "children": [
+      {
+        "id": "9hT5EBIpQkJe3ZSpzS_VE",
+        "type": "dataset",
+        "component": "ItemDs",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "dsName": "gdxm",
+        "dsField": "xmMc"
+      }
+    ],
+    "childrenIf": [],
+    "childrenElse": [],
+    "value": "b",
+    "dsName": "",
+    "dsField": ""
+  },
+  {
+    "id": "m4QetAsmi0AZ_ma1p1SAD",
+    "type": "judge",
+    "component": "RuleJudge",
+    "children": [],
+    "childrenIf": [
+      {
+        "id": "oupaARe9P8zXJ10Ag7QDH",
+        "type": "conditionGroupAnd",
+        "component": "CondtionGroupAnd",
+        "children": [
+          {
+            "id": "l_nZDkfxYrFVPV9NXDYcC",
+            "type": "condition",
+            "component": "CondtionItem",
+            "children": [
+              {
+                "id": "TbuadE-JPQDxAZOQiA6Dm",
+                "type": "dataset",
+                "component": "ItemDs",
+                "children": [],
+                "childrenIf": [],
+                "childrenElse": [],
+                "dsName": "gdxm",
+                "dsField": "xmMc"
+              },
+              {
+                "id": "FXbA1t5XTeO1t_-7j3d3j",
+                "type": "decider",
+                "component": "ItemDecider",
+                "children": [],
+                "childrenIf": [],
+                "childrenElse": [],
+                "value": ">"
+              },
+              {
+                "id": "4IKMQs72gOYtavlCi8ffG",
+                "type": "constVarchar",
+                "component": "ItemConstChar",
+                "children": [],
+                "childrenIf": [],
+                "childrenElse": [],
+                "value": "b"
+              }
+            ],
+            "childrenIf": [],
+            "childrenElse": [],
+            "value": "",
+            "dsName": "",
+            "dsField": ""
+          },
+          {
+            "id": "_2pcygsgRudpeojdArw2A",
+            "type": "condition",
+            "component": "CondtionItem",
+            "children": [
+              {
+                "id": "zFsk5Os_QVm83TjwI2XmO",
+                "type": "dataset",
+                "component": "ItemDs",
+                "children": [],
+                "childrenIf": [],
+                "childrenElse": [],
+                "dsName": "gdxm",
+                "dsField": "xmMc"
+              },
+              {
+                "id": "eHY7hfVUjM0lxsu7yHGYV",
+                "type": "decider",
+                "component": "ItemDecider",
+                "children": [],
+                "childrenIf": [],
+                "childrenElse": [],
+                "value": ">"
+              },
+              {
+                "id": "XVH1VfD66qIzVbY9xriG4",
+                "type": "constNumber",
+                "component": "ItemConstNumber",
+                "children": [],
+                "childrenIf": [],
+                "childrenElse": [],
+                "value": "8"
+              }
+            ],
+            "childrenIf": [],
+            "childrenElse": [],
+            "value": "",
+            "dsName": "",
+            "dsField": ""
+          }
+        ],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": "",
+        "dsName": "",
+        "dsField": ""
+      }
+    ],
+    "childrenElse": [
+      {
+        "id": "2Gc3Y4F-4nmLveiiN1zwJ",
+        "type": "return",
+        "component": "RuleReturn",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": "",
+        "dsName": "",
+        "dsField": ""
+      }
+    ],
+    "value": "",
+    "dsName": "",
+    "dsField": ""
+  }
+]

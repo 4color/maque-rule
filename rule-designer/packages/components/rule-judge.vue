@@ -14,7 +14,7 @@
         </div>
         <div class="group-line-shu group-line-shut-bottom">
           <div class="group-text">
-            则
+            否则
           </div>
         </div>
       </div>
