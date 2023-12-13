@@ -23,7 +23,7 @@ export function GetCondtionExpr(ruleCondition: IRule, dsData: Object): string {
                 expr += rule.value;
                 break;
             case ControlItemEnum.constVarchar:
-                expr += `"${rule.value}"`;
+                expr += `'${rule.value}'`;
                 break;
             case ControlItemEnum.constNumber:
                 expr += rule.value;
@@ -33,6 +33,9 @@ export function GetCondtionExpr(ruleCondition: IRule, dsData: Object): string {
                 break;
             case ControlItemEnum.func:
                 expr += GetFuncExpr(rule, dsData);
+                break;
+            case ControlItemEnum.empty:
+                expr += "null"
                 break
 
         }

@@ -13,7 +13,12 @@ export function GetDataSetFieldExpr(rule: IRule, dsData: Object): string {
         // @ts-ignore
         let ds = dsData[rule.dsName];
         if (typeof ds == "object") {
-
+            let val = ds[rule.dsField];
+            if (typeof val == "string") {
+                expr = `'${val}'`
+            } else if (typeof val == "number") {
+                expr = `${val}`;
+            }
         } else {
             expr = ds[rule.dsField];
         }

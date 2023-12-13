@@ -1,6 +1,7 @@
 import {ControlItemEnum, IRule} from "../../../rule-designer/packages/model/IRule.ts";
 import {GetDataSetFieldExpr} from "./get-expr-ds-field.ts";
 import {GetFuncExpr} from "./get-expr-func.ts";
+import {GetExprDecider} from "./get-expr-decider.ts";
 
 /**
  * 变量的处理
@@ -17,7 +18,7 @@ export function GetVarExpr(rule: IRule, dsData: Object): string {
         let child: IRule = rule.children[index] as IRule
         switch (child.type) {
             case ControlItemEnum.constVarchar:
-                expr += `"${child.value}"`;
+                expr += `'${child.value}'`;
                 break;
             case ControlItemEnum.constNumber:
                 expr += child.value;
@@ -27,7 +28,19 @@ export function GetVarExpr(rule: IRule, dsData: Object): string {
                 break;
             case ControlItemEnum.func:
                 expr += GetFuncExpr(child, dsData);
-                break
+                break;
+            case ControlItemEnum.operator:
+                expr += rule.value
+                break;
+            case ControlItemEnum.decider:
+                expr += GetExprDecider(rule);
+                break;
+            case ControlItemEnum.getvar:
+                expr += rule.value;
+                break;
+            case ControlItemEnum.empty:
+                expr += 'null';
+                break;
 
         }
 

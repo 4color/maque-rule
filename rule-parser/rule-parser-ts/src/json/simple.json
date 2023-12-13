@@ -1,17 +1,39 @@
 [
   {
-    "id": "mIB93_4bjZ-b989wgG9Nb",
+    "id": "QziJk2dmfqumVC3MIYldu",
     "type": "var",
     "component": "RuleVar",
     "children": [
       {
-        "id": "niO0MCwPD2iKcO_lcjEDh",
-        "type": "constNumber",
-        "component": "ItemConstNumber",
+        "id": "kN2tx7IN8HGEo68SlAmR_",
+        "type": "constVarchar",
+        "component": "ItemConstChar",
         "children": [],
         "childrenIf": [],
         "childrenElse": [],
-        "value": "78"
+        "value": "5"
+      }
+    ],
+    "childrenIf": [],
+    "childrenElse": [],
+    "value": "a",
+    "dsName": "",
+    "dsField": ""
+  },
+  {
+    "id": "jvEZ35OWkNdTwivIeO8ra",
+    "type": "var",
+    "component": "RuleVar",
+    "children": [
+      {
+        "id": "cAvc1M2yZfKv4ggGAldTU",
+        "type": "dsField",
+        "component": "ItemDsField",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "dsName": "gdxm",
+        "dsField": "id"
       }
     ],
     "childrenIf": [],
@@ -21,27 +43,27 @@
     "dsField": ""
   },
   {
-    "id": "8tPfpgl7lPg3YRWTlDOCS",
+    "id": "NOj44swy1NTTWY-wiksW5",
     "type": "judge",
     "component": "RuleJudge",
     "children": [],
     "childrenIf": [
       {
-        "id": "yzL5dhTi7ds7-gcK4bqYr",
+        "id": "sBKRkaCFkq5wrn6gfxZU4",
         "type": "condition",
         "component": "CondtionItem",
         "children": [
           {
-            "id": "3ThHIuTLX0mi_RU98Rxz7",
+            "id": "d9HfjAqmOUB3zZPNVzIqY",
             "type": "getvar",
             "component": "ItemVar",
             "children": [],
             "childrenIf": [],
             "childrenElse": [],
-            "value": "b"
+            "value": "a"
           },
           {
-            "id": "pxu5zzCSNFYREWHamJunC",
+            "id": "CpCLF6Acm6cPpOoD_FiK6",
             "type": "decider",
             "component": "ItemDecider",
             "children": [],
@@ -50,13 +72,13 @@
             "value": ">"
           },
           {
-            "id": "S6CageVmTQmhPj4FSlb25",
-            "type": "constNumber",
-            "component": "ItemConstNumber",
+            "id": "jaC2qlqRUCS_XkhQ4aURZ",
+            "type": "getvar",
+            "component": "ItemVar",
             "children": [],
             "childrenIf": [],
             "childrenElse": [],
-            "value": "100"
+            "value": "b"
           }
         ],
         "childrenIf": [],
@@ -66,7 +88,7 @@
         "dsField": ""
       },
       {
-        "id": "d80nDFopOJ9lWf4lIEF9g",
+        "id": "9Wj8h4ULHruqTQ-GcEnoD",
         "type": "return",
         "component": "RuleReturn",
         "children": [],
@@ -79,7 +101,7 @@
     ],
     "childrenElse": [
       {
-        "id": "6MlbKUL1aRTs4IW7Okhvi",
+        "id": "i3zFDckhyJRRJQTLTJ_XR",
         "type": "return",
         "component": "RuleReturn",
         "children": [],

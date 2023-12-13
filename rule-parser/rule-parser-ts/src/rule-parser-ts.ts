@@ -28,6 +28,7 @@ export function RuleParser(template: any, dsData: Object): Boolean {
 
     //表达式
     let expr: string = "";
+    let returnExpre: string = "";
 
     // @ts-ignore
     for (const index: IRule in data) {
@@ -40,14 +41,17 @@ export function RuleParser(template: any, dsData: Object): Boolean {
             case RuleEnum.judge:
                 expr += GetJudgeExpr(rule, dsData);
                 break
+            case RuleEnum.return:
+                returnExpre = "return " + rule.value + ";"
+                break
         }
     }
     //执行结果
     let result = false;
 
-    if (expr) {
-        console.log(expr);
-        result = evil(expr);
+    if (expr || returnExpre) {
+        console.log(expr + "\n" + returnExpre);
+        result = evil(expr + "\n" + returnExpre);
     }
 
     //返回结果

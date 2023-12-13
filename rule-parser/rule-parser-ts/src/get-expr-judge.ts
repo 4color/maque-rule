@@ -1,4 +1,4 @@
-import {IRule, RuleEnum} from "../../../rule-designer/packages/model/IRule.ts";
+import {ControlItemEnum, IRule, RuleEnum} from "../../../rule-designer/packages/model/IRule.ts";
 import {GetDataSetFieldExpr} from "./get-expr-ds-field.ts";
 import {GetFuncExpr} from "./get-expr-func.ts";
 import {GetCondtionExpr} from "./get-expr-condition.ts";
@@ -37,6 +37,9 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
             case RuleEnum.judge:
                 exprIf += GetJudgeExpr(rule, dsData);
                 break
+            case ControlItemEnum.empty:
+                exprIf += "null;"
+                break
             case RuleEnum.return:
                 exprIfReturn = "return " + rule.value;
                 break
@@ -73,13 +76,18 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
         }
 
     }
-
-    expr = `if (${exprIf}){
-       ${exprIfReturn};
+    if (exprElse || exprElseReturn) {
+        expr = `if (${exprIf}){
+           ${exprIfReturn};
+        } else {
+           ${exprElse}
+           ${exprElseReturn};
+        }`
     } else {
-       ${exprElse}
-       ${exprElseReturn};
-    }`
+        expr = `if (${exprIf}){
+           ${exprIfReturn};
+           } `
+    }
 
     return expr;
 }
