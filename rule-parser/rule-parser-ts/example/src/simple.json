@@ -1,54 +1,31 @@
 [
   {
-    "id": "54ZWmg6HYT7ttY0HGdOoJ",
-    "type": "var",
-    "component": "RuleVar",
-    "children": [
-      {
-        "id": "9hT5EBIpQkJe3ZSpzS_VE",
-        "type": "dataset",
-        "component": "ItemDs",
-        "children": [],
-        "childrenIf": [],
-        "childrenElse": [],
-        "dsName": "gdxm",
-        "dsField": "xmMc"
-      }
-    ],
-    "childrenIf": [],
-    "childrenElse": [],
-    "value": "b",
-    "dsName": "",
-    "dsField": ""
-  },
-  {
-    "id": "m4QetAsmi0AZ_ma1p1SAD",
+    "id": "j8QldEEsFUAiWbEdYk31-",
     "type": "judge",
     "component": "RuleJudge",
     "children": [],
     "childrenIf": [
       {
-        "id": "oupaARe9P8zXJ10Ag7QDH",
+        "id": "rRGh9dOk6VIsLF8dFqdUC",
         "type": "conditionGroupAnd",
         "component": "CondtionGroupAnd",
         "children": [
           {
-            "id": "l_nZDkfxYrFVPV9NXDYcC",
+            "id": "FTSGxrCTpWndubthqHktF",
             "type": "condition",
             "component": "CondtionItem",
             "children": [
               {
-                "id": "TbuadE-JPQDxAZOQiA6Dm",
-                "type": "dataset",
-                "component": "ItemDs",
+                "id": "Ww6oVtA2g_iob9QlFfL6R",
+                "type": "constVarchar",
+                "component": "ItemConstChar",
                 "children": [],
                 "childrenIf": [],
                 "childrenElse": [],
-                "dsName": "gdxm",
-                "dsField": "xmMc"
+                "value": "5"
               },
               {
-                "id": "FXbA1t5XTeO1t_-7j3d3j",
+                "id": "WJet9djYhdOmWOwsGwPTf",
                 "type": "decider",
                 "component": "ItemDecider",
                 "children": [],
@@ -57,13 +34,13 @@
                 "value": ">"
               },
               {
-                "id": "4IKMQs72gOYtavlCi8ffG",
+                "id": "Nww-XU0OJyaQRr-otrseK",
                 "type": "constVarchar",
                 "component": "ItemConstChar",
                 "children": [],
                 "childrenIf": [],
                 "childrenElse": [],
-                "value": "b"
+                "value": "1"
               }
             ],
             "childrenIf": [],
@@ -73,22 +50,21 @@
             "dsField": ""
           },
           {
-            "id": "_2pcygsgRudpeojdArw2A",
+            "id": "krrz9hnyGGFslNC5YEB6G",
             "type": "condition",
             "component": "CondtionItem",
             "children": [
               {
-                "id": "zFsk5Os_QVm83TjwI2XmO",
-                "type": "dataset",
-                "component": "ItemDs",
+                "id": "vuIBG1qMg5WFj7O5K7IdM",
+                "type": "constVarchar",
+                "component": "ItemConstChar",
                 "children": [],
                 "childrenIf": [],
                 "childrenElse": [],
-                "dsName": "gdxm",
-                "dsField": "xmMc"
+                "value": "6"
               },
               {
-                "id": "eHY7hfVUjM0lxsu7yHGYV",
+                "id": "lEnWLq0rJuB_fj4DDvzGf",
                 "type": "decider",
                 "component": "ItemDecider",
                 "children": [],
@@ -97,13 +73,13 @@
                 "value": ">"
               },
               {
-                "id": "XVH1VfD66qIzVbY9xriG4",
-                "type": "constNumber",
-                "component": "ItemConstNumber",
+                "id": "aKG6ACMCw0K2Ai2QMdkiA",
+                "type": "constVarchar",
+                "component": "ItemConstChar",
                 "children": [],
                 "childrenIf": [],
                 "childrenElse": [],
-                "value": "8"
+                "value": "1"
               }
             ],
             "childrenIf": [],
@@ -118,17 +94,28 @@
         "value": "",
         "dsName": "",
         "dsField": ""
-      }
-    ],
-    "childrenElse": [
+      },
       {
-        "id": "2Gc3Y4F-4nmLveiiN1zwJ",
+        "id": "YJHQoA3NHQ90TAzN58X9u",
         "type": "return",
         "component": "RuleReturn",
         "children": [],
         "childrenIf": [],
         "childrenElse": [],
-        "value": "",
+        "value": true,
+        "dsName": "",
+        "dsField": ""
+      }
+    ],
+    "childrenElse": [
+      {
+        "id": "z4Kz1zfTqur077ETQVVFy",
+        "type": "return",
+        "component": "RuleReturn",
+        "children": [],
+        "childrenIf": [],
+        "childrenElse": [],
+        "value": false,
         "dsName": "",
         "dsField": ""
       }

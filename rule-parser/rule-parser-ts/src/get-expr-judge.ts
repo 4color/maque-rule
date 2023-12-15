@@ -1,7 +1,8 @@
 import {ControlItemEnum, IRule, RuleEnum} from "../../../rule-designer/packages/model/IRule.ts";
-import {GetDataSetFieldExpr} from "./get-expr-ds-field.ts";
 import {GetFuncExpr} from "./get-expr-func.ts";
 import {GetCondtionExpr} from "./get-expr-condition.ts";
+import {GetCondtionAndExpr} from "./get-expr-condtition-group-and.ts";
+import {GetCondtionOrExpr} from "./get-expr-condtition-group-or.ts";
 
 /**
  * 判断的处理
@@ -26,10 +27,10 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
                 exprIf += GetCondtionExpr(rule, dsData);
                 break;
             case RuleEnum.conditionGroupAnd:
-                exprIf += rule.value;
+                exprIf += GetCondtionAndExpr(rule, dsData);
                 break;
             case RuleEnum.conditionGroupOr:
-                exprIf += GetDataSetFieldExpr(rule, dsData);
+                exprIf += GetCondtionOrExpr(rule, dsData);
                 break;
             case RuleEnum.var:
                 exprIf += GetFuncExpr(rule, dsData);
@@ -58,10 +59,10 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
                 exprElse += GetCondtionExpr(rule, dsData);
                 break;
             case RuleEnum.conditionGroupAnd:
-                exprElse += rule.value;
+                exprElse += GetCondtionAndExpr(rule, dsData);
                 break;
             case RuleEnum.conditionGroupOr:
-                expr += GetDataSetFieldExpr(rule, dsData);
+                exprElse += GetCondtionOrExpr(rule, dsData);
                 break;
             case RuleEnum.var:
                 exprElse += GetFuncExpr(rule, dsData);

@@ -1,0 +1,9 @@
+.vscode
+public
+vite.config.ts
+.DS_Store
+node_modules/
+example
+src
+.idea
+.vscode

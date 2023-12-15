@@ -12,7 +12,6 @@ rule-parser-drools:
 
 rule-parser-python:
 
-
 rule-parser-ts: TypeScript 的表达式解析器，最后编译为普通ES,UMD,CJS引用包
 
 rule-parser-js: 直接采用TS的编译成果

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TS解析器-CDN</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="./dist/rule-parser.umd.cjs"></script>
+<!-- 引入jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    var module = window.RuleParser;
+
+    var data =  $.parseJSON($.ajax({
+        url: "src/json/simple.json",//json文件位置，文件名
+        dataType: "json", //返回数据格式为json
+        async: false
+    }).responseText);
+    document.write("测试结果：" + module.Parser(data))
+</script>
+</body>
+</html>

@@ -7,7 +7,7 @@ import {GetJudgeExpr} from "./get-expr-judge.ts";
  * @param dsData 数据集的数据对象
  * @constructor
  */
-export function RuleParser(template: any, dsData: Object): Boolean {
+export function Parser(template: any, dsData: Object): Boolean {
 
     const evil = function (fn: string) {
         let Fn = Function;

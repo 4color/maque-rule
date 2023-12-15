@@ -1,6 +1,7 @@
 <template>
   <div class="noTips" v-if="props.data.length==0">请拖动内容到此</div>
   <draggable :list="props.data" :group="dragGroup"
+             style="min-width: 20px;min-height: 20px"
              item-key="id">
     <template #item="{ element }">
       <div class="container">

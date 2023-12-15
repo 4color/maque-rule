@@ -1,8 +1,11 @@
 {
   "name": "rule-parser-ts",
-  "private": true,
-  "version": "0.0.0",
+  "author": "4color",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "main": "./dist/rule-parser.umd.cjs",
+  "module": "./dist/rule-parser.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
