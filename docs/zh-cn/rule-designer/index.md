@@ -45,10 +45,17 @@ app.use(RuleDesigner)
 
 其中Vue3,ElementPlus和Pinia是必须要的。
 
-**面面中使用**
+**页面中使用**
 
 ```vue
  <rule-designer-layout ref="refDesigner"></rule-designer-layout>
+```
+
+给设计器赋于数据集和函数
+
+```typescript
+  refDesigner.value.SetDsData(dataset);
+  refDesigner.value.SetFunc(funcs);
 ```
 
 **赋值：**
