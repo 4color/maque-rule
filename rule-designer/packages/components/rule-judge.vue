@@ -12,6 +12,13 @@
             如果
           </div>
         </div>
+
+        <div class="group-line-shu group-line-shut-mid">
+          <div class="group-text">
+            则
+          </div>
+        </div>
+
         <div class="group-line-shu group-line-shut-bottom">
           <div class="group-text">
             否则
@@ -28,6 +35,9 @@
         <rule-judge-if :data="props.data.childrenIf"></rule-judge-if>
       </div>
       <div class="rule-back">
+        <rule-judge-then :data="props.data.childrenThen"></rule-judge-then>
+      </div>
+      <div class="rule-back">
         <rule-judge-else :data="props.data.childrenElse"></rule-judge-else>
       </div>
 
@@ -38,6 +48,7 @@
 <script setup lang="ts">
 
 import RuleJudgeIf from "./judge/rule-judge-if.vue";
+import RuleJudgeThen from "./judge/rule-judge-then.vue";
 import RuleJudgeElse from "./judge/rule-judge-else.vue";
 import {defineProps} from "vue";
 import {IRule, RuleEnum} from "../model/IRule";
@@ -45,7 +56,15 @@ import {IRule, RuleEnum} from "../model/IRule";
 const props = defineProps({
   data: {
     type: Object,
-    default: {childrenIf: [], childrenElse: [], id: "", type: RuleEnum.judge, value: "", children: []} as IRule
+    default: {
+      childrenIf: [],
+      childrenThen: [],
+      childrenElse: [],
+      id: "",
+      type: RuleEnum.judge,
+      value: "",
+      children: []
+    } as IRule
   }
 })
 
@@ -80,6 +99,10 @@ const props = defineProps({
   margin-top: 10px;
 }
 
+.group-line-mid {
+  margin-bottom: calc(50% - 10px);
+}
+
 .group-line-bottom {
   margin-bottom: 10px;
 }
@@ -112,7 +135,7 @@ const props = defineProps({
 }
 
 .group-line-shut-bottom {
-  height: 50% !important;
+  height: calc(50% - 13px) !important;
 }
 
 

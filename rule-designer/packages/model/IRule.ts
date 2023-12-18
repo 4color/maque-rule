@@ -7,6 +7,7 @@ export interface IRule {
     value: any,
     children?: IRule[],
     childrenIf?: IRule[],
+    childrenThen?: IRule[],
     childrenElse?: IRule[],
     dsName?: string,
     dsField?: string,

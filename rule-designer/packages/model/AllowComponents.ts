@@ -13,6 +13,17 @@ export const JudgeIfComps = [
     RuleEnum.conditionGroupAnd,
     RuleEnum.conditionGroupOr,
     RuleEnum.var,
+    RuleEnum.judge
+];
+
+/**
+ * 判断的 then
+ */
+export const JudgeThenComps = [
+    RuleEnum.condition,
+    RuleEnum.conditionGroupAnd,
+    RuleEnum.conditionGroupOr,
+    RuleEnum.var,
     RuleEnum.judge,
     RuleEnum.return
 ];

@@ -23,6 +23,11 @@ public class Rule {
     Rule[] childrenIf;
 
     /**
+     * Then的子节点
+     */
+    Rule[] childrenThen;
+
+    /**
      * ELes的子节点
      */
     Rule[] childrenEles;

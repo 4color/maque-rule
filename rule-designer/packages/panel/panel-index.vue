@@ -116,6 +116,7 @@ const AddControl = (ctrl: IControl) => {
     component: ctrl.component,
     children: [],
     childrenIf: [],
+    childrenThen: [],
     childrenElse: [],
     value: "",
     dsName: "",
@@ -131,6 +132,7 @@ const AddControlItem = (ctrl: IControl) => {
     component: ctrl.component,
     children: [],
     childrenIf: [],
+    childrenThen: [],
     childrenElse: []
   } as IRuleItem
   return ruleItem;

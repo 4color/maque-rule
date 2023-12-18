@@ -25,9 +25,8 @@ public class JudgeExprParser extends AbstractExprParser {
 
         String expr = "";
         String exprIf = "";
-        String exprIfReturn = "";
+        String exprThen = "";
         String exprElse = "";
-        String exprElseReturn = "";
 
         for (Rule child : data.getChildrenIf()) {
             if (child.getType() != null) {
@@ -39,11 +38,28 @@ public class JudgeExprParser extends AbstractExprParser {
                     case judge:
                         exprIf += parserHolder.GetExpr(child, dsData);
                         break;
-                    case RETURN:
-                        exprIfReturn = "return " + child.getValue() + ";";
-                        break;
                     case empty:
                         exprIf += "nil";
+                        break;
+                }
+            }
+        }
+
+        for (Rule child : data.getChildrenIf()) {
+            if (child.getType() != null) {
+                switch (child.getType()) {
+                    case var:
+                    case condition:
+                    case conditionGroupAnd:
+                    case conditionGroupOr:
+                    case judge:
+                        exprThen += parserHolder.GetExpr(child, dsData);
+                        break;
+                    case RETURN:
+                        exprThen = "return " + child.getValue() + ";";
+                        break;
+                    case empty:
+                        exprThen += "nil";
                         break;
                 }
             }
@@ -61,7 +77,7 @@ public class JudgeExprParser extends AbstractExprParser {
                             exprElse += parserHolder.GetExpr(child, dsData);
                             break;
                         case RETURN:
-                            exprElseReturn = "return " + child.getValue() + ";";
+                            exprElse = "return " + child.getValue() + ";";
                             break;
                         case empty:
                             exprElse += "nil";
@@ -71,10 +87,10 @@ public class JudgeExprParser extends AbstractExprParser {
             }
         }
 
-        if (StringUtils.hasText(exprElse) || StringUtils.hasText(exprElseReturn)) {
-            expr = "if (" + exprIf + "){" + exprIfReturn + " } else { " + exprElse + "} " + exprElseReturn + "};}";
+        if (StringUtils.hasText(exprIf) && StringUtils.hasText(exprElse)) {
+            expr = "if (" + exprIf + "){" + exprThen + " } else { " + exprElse + "}";
         } else {
-            expr = "if (" + exprIf + "){" + exprIfReturn + "};";
+            expr = "if (" + exprIf + "){" + exprThen + "}";
         }
 
         return expr;

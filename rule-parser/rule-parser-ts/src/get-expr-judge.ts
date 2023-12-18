@@ -12,9 +12,8 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
 
     let expr: string = "";
     let exprIf: string = "";
-    let exprIfReturn: string = "";
     let exprElse: string = ""
-    let exprElseReturn: string = ""
+    let exprIfThen: string = ""
 
 
     //IF的逻辑
@@ -41,8 +40,36 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
             case ControlItemEnum.empty:
                 exprIf += "null;"
                 break
+
+        }
+
+    }
+
+    //Then
+    for (const index in ruleJudge.childrenThen) {
+        // @ts-ignore
+        let rule: IRule = ruleJudge.childrenThen[index] as IRule
+        switch (rule.type) {
+            case RuleEnum.condition:
+                exprIfThen += GetCondtionExpr(rule, dsData);
+                break;
+            case RuleEnum.conditionGroupAnd:
+                exprIfThen += GetCondtionAndExpr(rule, dsData);
+                break;
+            case RuleEnum.conditionGroupOr:
+                exprIfThen += GetCondtionOrExpr(rule, dsData);
+                break;
+            case RuleEnum.var:
+                exprIfThen += GetFuncExpr(rule, dsData);
+                break
+            case RuleEnum.judge:
+                exprIfThen += GetJudgeExpr(rule, dsData);
+                break
+            case ControlItemEnum.empty:
+                exprIfThen += "null;"
+                break
             case RuleEnum.return:
-                exprIfReturn = "return " + rule.value;
+                exprIfThen = "return " + rule.value;
                 break
 
         }
@@ -71,22 +98,19 @@ export function GetJudgeExpr(ruleJudge: IRule, dsData: Object): string {
                 exprElse += GetJudgeExpr(rule, dsData);
                 break
             case RuleEnum.return:
-                exprElseReturn = "return " + rule.value;
+                exprElse += "return " + rule.value;
                 break
-
         }
-
     }
-    if (exprElse || exprElseReturn) {
+    if (exprElse && exprElse) {
         expr = `if (${exprIf}){
-           ${exprIfReturn};
+           ${exprIfThen};
         } else {
            ${exprElse}
-           ${exprElseReturn};
         }`
     } else {
         expr = `if (${exprIf}){
-           ${exprIfReturn};
+           ${exprIfThen};
            } `
     }
 
