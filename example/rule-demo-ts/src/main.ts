@@ -15,6 +15,8 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(ElementPlus)
+
+// @ts-ignore
 app.use(RuleDesigner)
 
 app.mount('#app')

@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import {defineProps} from "vue";
-import {JudgeIfComps, JudgeThenComps} from "../model/AllowComponents.ts";
+import {JudgeThenComps} from "../model/AllowComponents.ts";
 
 const props = defineProps({
   data: {

@@ -3,9 +3,7 @@ import {onMounted, ref} from "vue";
 import simple from "./json/simple.json"
 import funcs from "./json/func.json"
 import dataset from "./json/dataset.json"
-import {ElMessage, ElMessageBox} from "element-plus";
-import {IDataSet} from "maque-rule-designer/packages/model/IDataSet";
-import {IFunc} from "maque-rule-designer/packages/model/IFunc";
+import {ElMessageBox} from "element-plus";
 
 const refDesigner = ref();
 

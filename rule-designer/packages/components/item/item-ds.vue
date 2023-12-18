@@ -15,7 +15,7 @@
 
 import {defineEmits, defineProps, onMounted, ref, toRefs, watch} from "vue";
 import {IRule} from "../../model/IRule";
-import {IDataSet, IDataSetField} from "../../model/IDataSet.ts";
+import {IDataSet} from "../../model/IDataSet.ts";
 import {IDataSetName} from "../../model/IConst.ts";
 
 const props = defineProps({

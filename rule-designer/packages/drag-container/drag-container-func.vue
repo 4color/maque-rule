@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import {defineProps} from "vue";
-import {FuncComps, JudgeIfComps} from "../model/AllowComponents.ts";
+import {FuncComps} from "../model/AllowComponents.ts";
 
 const props = defineProps({
   data: {

@@ -26,5 +26,6 @@
 npm i maque-rule-designer
 ```
 
-## 4、查看Demo
+## 4、样例
 
+[Rule-demo-ts](https://github.com/4color/maque-rule/tree/main/example/rule-demo-ts)

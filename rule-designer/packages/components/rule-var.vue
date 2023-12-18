@@ -20,7 +20,7 @@
 <script setup lang="ts">
 
 import DragContainerCondition from "../drag-container/drag-container-condition.vue";
-import {computed, defineEmits, defineProps, toRefs, watch} from "vue";
+import {computed, defineProps, watch} from "vue";
 import {IRule, RuleEnum} from "../model/IRule";
 import {varStore} from "../store/StoreVar.ts";
 

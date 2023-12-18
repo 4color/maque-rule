@@ -66,6 +66,7 @@ const getData = () => {
  * @constructor
  */
 const SetDsData = (data: IDataSet[]) => {
+  // @ts-ignore
   let trueData = JSON.parse(JSON.stringify(data));
   eval("window." + IDataSetName + "=trueData;");
 }
@@ -76,6 +77,7 @@ const SetDsData = (data: IDataSet[]) => {
  * @constructor
  */
 const SetFunc = (data: IFunc[]) => {
+  // @ts-ignore
   let trueData = JSON.parse(JSON.stringify(data));
   eval("window." + IFuncName + "=trueData;");
 }
