@@ -26,6 +26,56 @@
 npm i maque-rule-designer
 ```
 
+**在main.ts中加载组件**
+
+```typescript
+import RuleDesigner from "maque-rule-designer"
+import {createPinia} from "pinia";
+
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(ElementPlus)
+
+// @ts-ignore
+app.use(RuleDesigner)
+```
+
+
+
+其中Vue3,ElementPlus和Pinia是必须要的。
+
+**面面中使用**
+
+```vue
+ <rule-designer-layout ref="refDesigner"></rule-designer-layout>
+```
+
+**赋值：**
+
+```typescript
+import simple from "./json/simple.json"
+const refDesigner = ref();
+refDesigner.value.loadData(simple);
+```
+
+
+
+其中的数据内容为：
+
+https://github.com/4color/maque-rule/blob/main/example/rule-demo-ts/src/json/simple.json
+
+**取得JSON数据:**
+
+```typescript
+const refDesigner = ref();
+const data = refDesigner.value.getData()._rawValue
+```
+
+
+
+更多的内容请参考Demo
+
 ## 4、样例
 
 [Rule-demo-ts](https://github.com/4color/maque-rule/tree/main/example/rule-demo-ts)
