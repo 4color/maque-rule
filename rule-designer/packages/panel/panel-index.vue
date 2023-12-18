@@ -101,7 +101,6 @@
 <script setup lang="ts">
 
 import {ControlContions, ControlItems, Controls, IControl} from "../model/IControl.ts";
-import draggable from "vuedraggable";
 import {IRule, IRuleItem, RuleEnum} from "../model/IRule.ts";
 import {ref} from "vue";
 import {nanoid} from 'nanoid'

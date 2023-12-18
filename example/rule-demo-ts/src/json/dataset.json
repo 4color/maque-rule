@@ -1,0 +1,30 @@
+[
+  {
+    "dsName": "gdxm",
+    "dsDesc": "Project",
+    "fields": [
+      {
+        "fieldName": "id",
+        "filedDesc": "ID"
+      },
+      {
+        "fieldName": "name",
+        "filedDesc": "Filed Name"
+      }
+    ]
+  },
+  {
+    "dsName": "product",
+    "dsDesc": "You Product",
+    "fields": [
+      {
+        "fieldName": "no",
+        "filedDesc": "Product No"
+      },
+      {
+        "fieldName": "name",
+        "filedDesc": "Product Name"
+      }
+    ]
+  }
+]

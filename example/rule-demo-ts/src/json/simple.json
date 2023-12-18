@@ -1,0 +1,36 @@
+[
+  {
+    "id": "Jabn7TZJR2Xbp0YxbdWRe",
+    "type": "judge",
+    "component": "RuleJudge",
+    "childrenIf": [
+      {
+        "id": "QjfjHaH_G1UDTMIlIDIpF",
+        "type": "condition",
+        "component": "CondtionItem",
+        "children": [
+          {
+            "id": "UPmYIPXcnhRV5QkoagASW",
+            "type": "const",
+            "component": "ItemConstChar",
+            "value": "8"
+          }
+        ]
+      },
+      {
+        "id": "RJff7Ll3qpgOZ5e__qbFg",
+        "type": "condition",
+        "component": "CondtionItem",
+        "children": [
+          {
+            "id": "Da4fm9wCKl3zbA7TpAtyo",
+            "type": "const",
+            "component": "ItemConstChar",
+            "value": "9"
+          }
+        ]
+      }
+    ],
+    "childrenElse": []
+  }
+]

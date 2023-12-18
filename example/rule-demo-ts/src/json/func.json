@@ -1,0 +1,27 @@
+[
+  {
+    "funcName": "Math.abs",
+    "funcDesc": "Math.abs(x)",
+    "funcVarCount": 1
+  },
+  {
+    "funcName": "Math.ceil",
+    "funcDesc": "Math.ceil(x)",
+    "funcVarCount": 1
+  },
+  {
+    "funcName": "Math.floor",
+    "funcDesc": "Math.floor(x)",
+    "funcVarCount": 1
+  },
+  {
+    "funcName": "IndexOf",
+    "funcDesc": ".IndexOf",
+    "funcVarCount": 1
+  },
+  {
+    "funcName": "substr",
+    "funcDesc": ".substr",
+    "funcVarCount": 1
+  }
+]

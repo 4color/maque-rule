@@ -1,7 +1,7 @@
 {
   "name": "maque-rule-designer",
   "private": false,
-  "version": "0.0.12",
+  "version": "0.0.14",
   "type": "module",
   "main": "./dist/rule-designer.umd.cjs",
   "module": "./packages/index.ts",
