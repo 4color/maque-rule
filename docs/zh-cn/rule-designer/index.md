@@ -29,3 +29,7 @@ npm i maque-rule-designer
 ## 4、样例
 
 [Rule-demo-ts](https://github.com/4color/maque-rule/tree/main/example/rule-demo-ts)
+
+## 5、DEMO
+
+https://4color.github.io/maque-rule/rule-demo-ts/
