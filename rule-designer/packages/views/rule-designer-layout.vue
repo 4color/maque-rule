@@ -68,7 +68,10 @@ const getData = () => {
 const SetDsData = (data: IDataSet[]) => {
   // @ts-ignore
   let trueData = JSON.parse(JSON.stringify(data));
-  eval("window." + IDataSetName + "=trueData;");
+
+  // @ts-ignore
+  //eval("window." + IDataSetName + "=" + trueData);
+  window[IDataSetName] = trueData;
 }
 
 /**
@@ -79,7 +82,9 @@ const SetDsData = (data: IDataSet[]) => {
 const SetFunc = (data: IFunc[]) => {
   // @ts-ignore
   let trueData = JSON.parse(JSON.stringify(data));
-  eval("window." + IFuncName + "=trueData;");
+  //eval("window." + IFuncName + "=" + trueData);
+  // @ts-ignore
+  window[IFuncName] = trueData;
 }
 
 defineExpose({

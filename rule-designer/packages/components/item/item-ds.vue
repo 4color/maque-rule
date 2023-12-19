@@ -29,7 +29,8 @@ const rule = ref({value: ""} as IRule)
 const alls = ref([] as IDataSet[])
 
 onMounted(() => {
-  alls.value = eval("window." + IDataSetName);
+  // @ts-ignore
+  alls.value = window[IDataSetName];
   rule.value = mv.value as IRule;
 })
 

@@ -29,7 +29,9 @@ const mv = toRefs(props).data
 const rule = ref({value: "", id: ""} as IRule)
 
 onMounted(() => {
-  alls.value = eval("window." + IFuncName);
+
+  // @ts-ignore
+  alls.value = window[IFuncName];
   // console.log(alls.value)
 
   // let func = {funcName: "seq.neq", funcDesc: "seq.neq(value)", funcVarCount: 1} as IFunc

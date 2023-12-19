@@ -8,7 +8,8 @@
     </el-select>
 
     <el-select placeholder="字段" v-model="rule.dsField">
-      <el-option :value="item.fieldName" v-for="item in allFields">{{item.fieldName}}({{ item.filedDesc}})</el-option>
+      <el-option :value="item.fieldName" v-for="item in allFields">{{ item.fieldName }}({{ item.filedDesc }})
+      </el-option>
     </el-select>
   </div>
 </template>
@@ -33,7 +34,8 @@ const alls = ref([] as IDataSet[])
 const allFields = ref([] as IDataSetField[])
 
 onMounted(() => {
-  alls.value = eval("window." + IDataSetName);
+  // @ts-ignore
+  alls.value = window[IDataSetName]
   rule.value = mv.value as IRule;
 })
 

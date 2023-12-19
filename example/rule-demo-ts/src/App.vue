@@ -9,9 +9,7 @@ const refDesigner = ref();
 
 onMounted(() => {
 
-
   refDesigner.value.SetDsData(dataset);
-
   refDesigner.value.SetFunc(funcs);
 
 })
