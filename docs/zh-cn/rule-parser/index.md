@@ -66,7 +66,13 @@ let result = Parser(simple, dsData)
 
 **引入Maven坐标**
 
-*未发布*
+```xml
+  <dependency>
+      <groupId>cloud.maque.rule</groupId>
+      <artifactId>rule-parser-aviator</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+```
 
 **调用**
 
