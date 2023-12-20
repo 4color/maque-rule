@@ -31,7 +31,7 @@ export default defineConfig({
         rollupOptions: { // 自定义底层的Rollup打包配置
             // https://rollupjs.org/configuration-options/
             // 确保外部化处理那些你不想打包进库的依赖
-            external: ['vue', 'element-plus'],
+            external: ['vue', 'element-plus', 'pinia'],
             output: {
                 // format: 'es', // 默认es，可选 'amd' 'cjs' 'es' 'iife' 'umd' 'system'
                 exports: 'named', // https://rollupjs.org/configuration-options/#output-exports
@@ -39,7 +39,8 @@ export default defineConfig({
                 globals: {
                     vue: 'Vue',
                     // 'vue-router': 'VueRouter', // 引入vue-router全局变量，否则router.push将无法使用
-                    ElementPlus: 'element-plus'
+                    ElementPlus: 'element-plus',
+                    pinia: 'pinia',
                 }
             }
         },

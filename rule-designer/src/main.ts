@@ -13,9 +13,14 @@ import {createPinia} from "pinia";
 
 const app = createApp(App)
 
-app.use(createPinia())
+const pinia = createPinia()
+app.use(pinia)
+window.pinia = pinia
+
 app.use(ElementPlus)
 app.use(RuleDesigner)
+
+
 
 app.mount('#app')
 

@@ -31,7 +31,8 @@ const props = defineProps({
   }
 })
 
-const userVarStore = varStore();
+// @ts-ignore
+const userVarStore = varStore(window.pinia);
 const mv = computed(() => {
   return JSON.parse(JSON.stringify(props.data?.value));
 })
